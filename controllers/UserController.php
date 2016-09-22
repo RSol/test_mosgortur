@@ -2,6 +2,8 @@
 
 namespace app\controllers;
 
+use app\models\Group;
+use app\models\Skill;
 use Yii;
 use app\models\User;
 use app\models\UserSearch;
@@ -37,10 +39,14 @@ class UserController extends Controller
     {
         $searchModel = new UserSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $groups = Group::find()->asArray()->all();
+        $skills = Skill::find()->asArray()->all();
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'groups' => $groups,
+            'skills' => $skills,
         ]);
     }
 
