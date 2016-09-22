@@ -37,8 +37,9 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
-//            ['label' => 'About', 'url' => ['/site/about']],
-//            ['label' => 'Contact', 'url' => ['/site/contact']],
+            ['label' => 'Users', 'url' => ['/user/index']],
+            ['label' => 'Skills', 'url' => ['/skill/index']],
+            ['label' => 'Groups', 'url' => ['/group/index']],
         ],
     ]);
     NavBar::end();
